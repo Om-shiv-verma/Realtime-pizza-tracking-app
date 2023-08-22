@@ -7,11 +7,16 @@
     -Dev dependancies
         -nodemon
 33 create express server - create a server.js file
-44 create home page using html css
+44 git setup and first commit 
+55 install laravel mix
+    -setup js and scss
+66 install tailwind css
+
+77 create home page using html css
    - include tailwind css
-   
-55 create cart page
+
+88 create cart page
      - order summery section
      - empty cart section
-66  create order controller and link it in server.js
+99  create order controller and link it in server.js
 
