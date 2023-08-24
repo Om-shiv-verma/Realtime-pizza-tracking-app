@@ -18,5 +18,26 @@
 88 create cart page
      - order summery section
      - empty cart section
+
+99 move routes to routes files
+10 create dedicated controller
+
+11 add to cart functionality
+    - connect to mongo db
+    - use connect-mongo for session store
+        - dependancies
+            -mongooese, express-session, connect-mongo, dotenv, express-flash
+    - axios to send ajax request
+    - install notification library npm i noty 
+12 create login page with routes
+13 create register page curd
+   -dependencies express-flash express-session dotenv
+   -status code article
+14 Build login using passport 
+    -install dependencies passport passport-local express-session
+
+
+
+
 99  create order controller and link it in server.js
 
