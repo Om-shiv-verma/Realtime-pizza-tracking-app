@@ -35,9 +35,7 @@
    -status code article
 14 Build login using passport 
     -install dependencies passport passport-local express-session
-
-
-
-
-99  create order controller and link it in server.js
+15  create order controller and link it in server.js
+16 create order view with table for customer and admin
+17 create order single page with status
 
