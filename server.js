@@ -10,12 +10,16 @@ const session = require("express-session");
 const flash = require("express-flash");
 const MongoStore = require("connect-mongo");
 const passport = require('passport')
+const Emitter = require('events')
+
+
+mongoose.set('strictQuery', false);
+mongoose.set('strictQuery', true);
+
 //database connection
 const url = "mongodb://0.0.0.0:27017/pizza";
-
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
-
 mongoose.connection
   .once("open", () => {
     console.log("Database connected.......");
@@ -24,12 +28,14 @@ mongoose.connection
     console.log("connection failed....");
   });
 
- 
 // session store
 let mongoStore = new MongoStore({
   mongoUrl: url,
   collection: 'sessions'
 })
+// Event emitter
+const eventEmitter = new Emitter()
+app.set('eventEmitter', eventEmitter)
 
 // Session config
 app.use(
@@ -69,6 +75,25 @@ app.set("view engine", "ejs");
 //routes
 require("./routes/web")(app);
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Listening on port  ${PORT}`);
 });
+
+
+//Socket
+const io = require('socket.io')(server)
+io.on('connection', (socket) => {
+      // Join
+      socket.on('join', (orderId) => {
+        socket.join(orderId)
+      })
+})
+
+
+eventEmitter.on('orderUpdated', (data) => {
+  io.to(`order_${data.id}`).emit('orderUpdated', data)
+})
+
+eventEmitter.on('orderPlaced', (data) => {
+  io.to('adminRoom').emit('orderPlaced', data)
+})
