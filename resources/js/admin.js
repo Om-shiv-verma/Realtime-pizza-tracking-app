@@ -91,4 +91,5 @@ export function initAdmin(socket) {
         orderTableBody.innerHTML = ''
         orderTableBody.innerHTML = generateMarkup(orders)
     })
+    
 }

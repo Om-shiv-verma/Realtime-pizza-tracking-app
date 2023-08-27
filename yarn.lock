@@ -2417,6 +2417,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stripe/stripe-js@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@stripe/stripe-js@npm:2.1.0"
+  checksum: e78f4f0f73ca9471fc73b1b10e9c7786c94c305d77a612ad9abe1993451a17a18315a031987cd9a3573bee348b25c7d95090496ee537f33c497954bcf8ddca1b
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -2687,7 +2694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:>=8.1.0":
   version: 20.5.6
   resolution: "@types/node@npm:20.5.6"
   checksum: d2ce44f1cfa3fd00fe7426f7cf9a46d680cd57802b874ed5618e7d9101a9c6b8de37f08c0e7185ee06fb363ad492549c3ea69665c7e8e31c7813210ed8e89005
@@ -7893,6 +7900,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "realtime-pizza@workspace:."
   dependencies:
+    "@stripe/stripe-js": ^2.1.0
     axios: ^1.4.0
     bcrypt: ^5.1.1
     connect-mongo: ^5.0.0
@@ -7914,6 +7922,7 @@ __metadata:
     sass: ^1.66.1
     sass-loader: 12.1.0
     socket.io: ^4.7.2
+    stripe: ^13.3.0
     watch: ^1.0.2
   languageName: unknown
   linkType: soft
@@ -8720,6 +8729,16 @@ __metadata:
   version: 2.0.0
   resolution: "strip-final-newline@npm:2.0.0"
   checksum: 69412b5e25731e1938184b5d489c32e340605bb611d6140344abc3421b7f3c6f9984b21dff296dfcf056681b82caa3bb4cc996a965ce37bcfad663e92eae9c64
+  languageName: node
+  linkType: hard
+
+"stripe@npm:^13.3.0":
+  version: 13.3.0
+  resolution: "stripe@npm:13.3.0"
+  dependencies:
+    "@types/node": ">=8.1.0"
+    qs: ^6.11.0
+  checksum: 5a59a7e1f2fe442e5390c6bae4d096e4176fa9615c97e892bc9f0e72669cfab1591860f207f5b3f306328f2959a16219e13dfe8afbb48a7708b11f36fad5e0ac
   languageName: node
   linkType: hard
 

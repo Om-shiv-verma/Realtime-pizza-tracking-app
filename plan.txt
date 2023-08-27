@@ -1,3 +1,7 @@
+for start the server
+yarn watch
+yarn dev
+
 11 create directory structure
 22 create a NPM project and install all dependancies
      -dependencies
